@@ -55,7 +55,7 @@ class UserController extends Controller
         $users->image = $image;
         $users->save();
         }
-        return redirect('/manageuser');
+        return redirect('/manageusers');
 
     }
     public function delete($id)
@@ -63,5 +63,11 @@ class UserController extends Controller
         $users = User::find($id);
         $users->delete();
         return redirect('/manageuser');
+    }
+    public function cetak_pdf()
+    {
+        $users = User::all();
+        $pdf = PDF::loadview('users_pdf',['users'=>$users]);
+        return $pdf->stream();
     }
 }

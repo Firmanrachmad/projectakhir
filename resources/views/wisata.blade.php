@@ -13,8 +13,8 @@
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">Destinasi Wisata</h2>
+                    <h3 class="section-subheading text-muted">Di page ini akan diberikan foto destinasi wisata yang ada di seluruh Indonesia.</h3>
                 </div>
                 
                 <div class="row">
@@ -29,7 +29,6 @@
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">{{$art->title}}</div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
                             </div>
                         </div>
                     </div>
@@ -42,8 +41,8 @@
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">Review Wisata</h2>
+                    <h3 class="section-subheading text-muted">Disini adalah halaman tentang review wisata yang sudah dikunjungi orang-orang</h3>
                 </div>
                 @foreach($reviewsAll as $fart)
                 <ul class="timeline">
@@ -77,8 +76,8 @@
         <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">Rekomendasi Wisata</h2>
+                    <h3 class="section-subheading text-muted">Disini akan disajikan rekomendasi destinasi wisata di tahun 2021</h3>
                 </div>
                 <div class="row">
                     @foreach($wisatasp as $wart)
@@ -86,17 +85,13 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="storage/{{$wart->featured_image}}" alt="" />
                             <h4>{{$wart->title}}</h4>
-                            <p class="text-muted">Lead Designer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     @endforeach
                 </div>
                     
                 <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Happy Travellin'!</p></div>
                 </div>
             </div>
         </section>

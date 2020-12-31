@@ -7,6 +7,7 @@ use App\Wisata;
 use App\Review;
 use Illuminate\Support\Facades\Gate;
 Use Storage;
+use PDF;
 
 class WisataController extends Controller
 {
@@ -133,6 +134,16 @@ class WisataController extends Controller
     $review = Review::find($id);
     $review->delete();
     return redirect('/managereview');
+    }
+    public function cetak_pdf(){
+        $wisata = Wisata::all();
+        $pdf = PDF::loadview('wisata_pdf',['wisata'=>$wisata]);
+        return $pdf->stream();
+    }
+    public function cetak_pdf1(){
+        $review = Review::all();
+        $pdf = PDF::loadview('review_pdf',['review'=>$review]);
+        return $pdf->stream();
     }
     /*public function getAll(){
         $wisata = Wisata::all();

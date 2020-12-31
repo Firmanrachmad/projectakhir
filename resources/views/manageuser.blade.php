@@ -1,6 +1,6 @@
 @extends('master')
   @section('content')
-  <div class="container">
+  <!-- <div class="container"> -->
   <br><br><br>
 <div class="row">
   <div class="col-md-8">
@@ -36,13 +36,13 @@
         @endforeach
     </tbody>
     </table>
-    <a href="/manageusers/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
+    <a href="/manageusers/cetak_pdf" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" target="_blank">CETAK PDF</a>
     
 
   </div>
   </div>
 <!-- /.row -->
 
-</div>
+<!-- </div> -->
 <!-- /.container -->
   @endsection

@@ -42,6 +42,7 @@
                 @endforeach
             </tbody>
             </table>
+            <a href="/wisatar/cetak_pdf" class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" target="_blank">CETAK PDF</a>
         </div>
     </div>
  @endsection

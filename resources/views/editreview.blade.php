@@ -21,8 +21,8 @@
             <input type="text" class="form-control" required="required" name="title" value="{{$review->title}}"></br>
         </div>
         <div class="form-group">
-            <label for="title">Kategori</label>
-            <input type="text" class="form-control" required="required" name="title" value="{{$review->kategori}}"></br>
+            <label for="kategori">Kategori</label>
+            <input type="text" class="form-control" required="required" name="kategori" value="{{$review->kategori}}"></br>
         </div>
         <div class="form-group">
             <label for="content">Comment</label>
