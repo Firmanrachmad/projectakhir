@@ -36,10 +36,23 @@ Route::get('/manageusers/edit/{id}','UserController@edit');
 Route::post('/manageusers/update/{id}','UserController@update');
 Route::get('/manageusers/delete/{id}','UserController@delete');
 Route::get('/manageusers/cetak_pdf', 'UserController@cetak_pdf');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('profile', 'ProfileController@edit')->name('profile.edit');
+});
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('profile', 'ProfileController@edit')
+        ->name('profile.edit');
+
+    Route::patch('profile', 'ProfileController@update')
+        ->name('profile.update');
+});
 // --------------------------------------------------------------------
 Route::get('/managereview', 'WisataController@index2')->name('managereview');
 Route::get('/wisatar/add','WisataController@add1');
+Route::get('/wisataru/add','WisataController@addu');
 Route::post('/wisatar/create','WisataController@create1');
+Route::post('/wisataru/create','WisataController@createu');
 Route::get('/wisatar/edit/{id}','WisataController@edit1');
 Route::post('/wisatar/update/{id}','WisataController@update1');
 Route::get('/wisatar/delete/{id}','WisataController@delete1');

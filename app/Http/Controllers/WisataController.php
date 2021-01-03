@@ -53,6 +53,10 @@ class WisataController extends Controller
     {
         return view('addreview');
     }
+    public function addu()
+    {
+        return view('addreviewu');
+    }
     public function create(Request $request)
     {
         if($request->file('image')){
@@ -77,6 +81,19 @@ class WisataController extends Controller
         'featured_image' => $image_name
         ]);
         return redirect('/managereview');
+    }
+    public function createu(Request $request)
+    {
+        if($request->file('image')){
+            $image_name = $request->file('image')->store('images','public');
+        }
+        Review::create([
+        'title' => $request->title,
+        'kategori' => $request->kategori,
+        'comment' => $request->comment,
+        'featured_image' => $image_name
+        ]);
+        return redirect('/home');
     }
     public function edit($id)
     {

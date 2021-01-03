@@ -39,6 +39,12 @@ class UserController extends Controller
         $users = User::find($id);   
         return view('edituser',['users'=>$users]);   
     }
+    public function editu(Request $request)
+    {
+        return view('viewuser', [
+            'user' => $request->user()
+        ]);
+    }
     public function update($id, Request $request)
     {
         $users = User::find($id);
@@ -62,7 +68,7 @@ class UserController extends Controller
     {
         $users = User::find($id);
         $users->delete();
-        return redirect('/manageuser');
+        return redirect('/manageusers');
     }
     public function cetak_pdf()
     {

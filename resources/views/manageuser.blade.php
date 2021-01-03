@@ -1,5 +1,12 @@
 @extends('master')
   @section('content')
+  <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Welcome To Our Travel Blog!</div>
+                <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#portfolio">Read More</a>
+            </div>
+        </header>
   <!-- <div class="container"> -->
   <br><br><br>
 <div class="row">

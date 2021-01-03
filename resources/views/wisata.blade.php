@@ -70,7 +70,7 @@
                     </li>
                 </ul>
             </div>
-            <center><a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="\wisatar\add">Tambah Data</a></center>
+            <center><a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="\wisataru\add">Tambah Data</a></center>
         </section>
         <!-- Team-->
         <section class="page-section bg-light" id="team">
@@ -128,7 +128,6 @@
                                 <div class="modal-body">
                                     <!-- Project Details Go Here-->
                                     <h2 class="text-uppercase">{{$art->title}}</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="storage/{{$art->featured_image}}" alt="" />
                                     <p>{{$art->content}}</p>
                                     <ul class="list-inline">
