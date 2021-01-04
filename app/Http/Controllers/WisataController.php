@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Wisata;
 use App\Review;
+use App\Comment;
 use Illuminate\Support\Facades\Gate;
 Use Storage;
 use PDF;
@@ -21,9 +22,11 @@ class WisataController extends Controller
     }
     
     public function index() {
+        $komentarAll = Comment::all();
         $wisatasAll = Wisata::all();
         $wisatasp = \App\Wisata::paginate(3);
-        // $wisatas = json_decode(json_encode($wisatasAll));
+        
+        // $komentarAll = json_decode(json_encode($komentarAll));
         // return view('wisata')->with(compact('wisatasAll'));
         // $value = Cache::rememberForever('wisatas', function(){
         //     return \App\Wisata::all();
@@ -31,7 +34,7 @@ class WisataController extends Controller
 
         $reviewsAll = Review::all();
         // $reviews = json_decode(json_encode($reviewsAll));
-        return view('wisata')->with(compact('reviewsAll', 'wisatasAll', 'wisatasp'));
+        return view('wisata')->with(compact('reviewsAll', 'wisatasAll', 'wisatasp', 'komentarAll'));
         $value = Cache::rememberForever('reviews', function(){
             return \App\Review::all();
         });
@@ -56,6 +59,14 @@ class WisataController extends Controller
     public function addu()
     {
         return view('addreviewu');
+    }
+    public function addComment(Request $request, $id){
+        $wisata = Wisata::find($id);
+        $user = new Comment();
+        $user->comment = $request->comment;
+        $user->id_artikel = $request->id_artikel;
+        $user->save();
+        return redirect("/home");
     }
     public function create(Request $request)
     {

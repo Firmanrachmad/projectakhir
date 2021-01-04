@@ -5,8 +5,8 @@
 </head>
 <body>
 <style type="text/css">
-        table tr td{padding:2px 4px; background-color:rgba(84, 84, 92, 0.253); color:rgb(0, 0, 0);},
-        table tr th{padding:2px 4px; background-color:#007bff; color:rgb(0, 0, 0);}{
+        table tr td{padding:2px 4px; background-color:rgba(84, 84, 92, 0.253); color:rgb(255, 225, 0);},
+        table tr th{padding:2px 4px; background-color:#ffdf00; color:rgb(0, 0, 0);}{
         font-size: 9pt;
 }
 </style>

@@ -19,7 +19,7 @@ Route::get('/home', 'WisataController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home1', 'HomeController@index')->name('home1');
+// Route::get('/home1', 'HomeController@index')->name('home1');
 // --------------------------------------------------------------------
 Route::get('/manage', 'WisataController@index1')->name('manage');
 Route::get('/wisata/add','WisataController@add');
@@ -28,6 +28,7 @@ Route::get('/wisata/edit/{id}','WisataController@edit');
 Route::post('/wisata/update/{id}','WisataController@update');
 Route::get('/wisata/delete/{id}','WisataController@delete');
 Route::get('/wisata/cetak_pdf', 'WisataController@cetak_pdf');
+Route::get('/wisata/{id}/addComment', 'WisataController@addComment');
 // --------------------------------------------------------------------
 Route::get('/manageusers', 'UserController@index')->name('manageusers');
 Route::get('/manageusers/add','UserController@add');

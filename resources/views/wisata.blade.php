@@ -131,14 +131,43 @@
                                     <img class="img-fluid d-block mx-auto" src="storage/{{$art->featured_image}}" alt="" />
                                     <p>{{$art->content}}</p>
                                     <ul class="list-inline">
-                                        <li>Date: January 2020</li>
+                                        <li>{{ Auth::user()->name }}</li>
                                         <li>Client: Threads</li>
                                         <li>Category: Illustration</li>
                                     </ul>
+                                    @foreach($komentarAll as $kart)
+                                    <div class="media mb-4">
+                                        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                                        <div class="media-body">
+                                            <h5 class="mt-0">{{ Auth::user()->name }}</h5>
+                                            {{$kart->comment}}
+                                        </div>
+                                    </div>
+                                    <div class="card my-4">
+                                        <h5 class="card-header">Leave a Comment:</h5>
+                                        <div class="card-body">
+                                            <form action="/wisata/{{$kart->id}}/addComment" method="post">
+                                            @csrf
+                                            <input type="hidden" name="_token" value="<?php echo csrf_token() ?>">
+                                            <div class="form-group">
+                                                <p>Name : </p>
+                                                <li>{{ Auth::user()->name }}</li>
+                                            </div>
+                                            <div class="form-group">
+                                                <p>Comment : </p>
+                                                <input class="form-control" type="text" name="comment"></input>
+                                            </div>
+                                            <input type="hidden" name="id_artikel" value="{{$kart->id}}">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    @endforeach
                                     <button class="btn btn-primary" data-dismiss="modal" type="button">
                                         <i class="fas fa-times mr-1"></i>
                                         Close Project
                                     </button>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -147,5 +176,4 @@
             </div>
         </div>
         @endforeach
-        
   @endsection	
